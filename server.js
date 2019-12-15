@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
-const api = require('./routes/api')
-const City = require("./model/City.js")
+const api = require('./Server/routes/api')
+const City = require("./Server/model/City.js")
 const path = require('path')
 
 const mongoose = require('mongoose')
