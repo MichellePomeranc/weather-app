@@ -1,0 +1,58 @@
+body {
+    background-color: lightsteelblue;
+}
+
+#cityInput {
+    width: fit-content;
+}
+
+#weatherButton {
+    background-color: lightgrey;
+}
+
+.city-container {
+    height: 100vw;
+}
+
+.city {
+    grid-template-columns: 80% 20%;
+    background: linear-gradient(to bottom right, blue, pink);
+    max-height: 170px;
+    min-width: 230px;    
+    padding: 10px;
+    margin: 10px;
+}
+
+#add {
+    align-self: center;
+}
+
+#remove {
+    align-self: center;
+}
+
+#city-name {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
+
+#temperature {
+    align-self: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+}
+
+#condition {
+    align-self: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+}
+
+.conditionPic {
+    align-self: right;
+}
