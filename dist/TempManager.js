@@ -21,14 +21,6 @@ class TempManager {
     console.log(this.cityData)
     } 
 
-    // async saveCity(cityName) {
-    //     const cityToSave = this.cityData.find(c => c.name == cityName)
-    //     // console.log(cityToSave)
-    //     await $.post(`/city`, cityToSave, function (response) {
-    //         console.log(response)
-    //     })
-    // }
-
     async saveCity(cityName){
         for(let c of this.cityData){
             if(c.name == cityName && c.saved == false){
@@ -39,16 +31,6 @@ class TempManager {
         }
         console.log(cityName + ' is already saved')
     }
-
-    // async removeCity(cityName) {
-    //     // console.log(cityName)
-    //     await $.ajax({
-    //         url: `/city/${cityName}`,
-    //         method: "DELETE",
-    //         success: (result) => {}
-    //     })
-    //     this.renderer.renderData(this.cityData)
-    // }
 
     removeCity(cityName){
         for(let c in this.cityData){
