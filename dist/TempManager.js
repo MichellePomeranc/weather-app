@@ -21,14 +21,6 @@ class TempManager {
     console.log(this.cityData)
     } 
 
-    // async saveCity(cityName) {
-    //     const cityToSave = this.cityData.find(c => c.name == cityName)
-    //     // console.log(cityToSave)
-    //     await $.post(`/city`, cityToSave, function (response) {
-    //         console.log(response)
-    //     })
-    // }
-
     async saveCity(cityName){
         for(let c of this.cityData){
             if(c.name == cityName && c.saved == false){

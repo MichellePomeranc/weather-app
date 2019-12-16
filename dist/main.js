@@ -25,15 +25,7 @@ $('#weatherButton').on('click', function () {
     tempManager.saveCity(newCity);
   });
 
-//   $('body').on('click', '#remove', function() {
-//     let newCity = $(this)
-//       .closest('.city')
-//       .find('div')
-//       .first()
-//       .text();
-//     tempManager.removeCity(newCity);
-//     loadPage()
-//   });
+
 $("body").on('click', '#remove', function () {
     let cityName = $(this).siblings('#city-name').text()
     let x = tempManager.removeCity(cityName)
