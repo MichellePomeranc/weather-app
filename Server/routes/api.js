@@ -40,8 +40,7 @@ router.post('/city', function (req, res) {
 router.delete('/city/:cityName', function (req, res){
     const cityName = req.params.cityName
     // console.log(cityName)
-    City.findOneAndDelete({name: cityName}).then(console.log(cityName + ' was deleted from DB'))
-    // res.send(City.name + ' was deleted from DB')
+    City.findOneAndDelete({name: cityName}).then(console.log(cityName + ' was removed from DB'))
 })
 
 module.exports = router

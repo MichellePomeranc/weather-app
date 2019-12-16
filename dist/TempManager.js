@@ -33,39 +33,22 @@ class TempManager {
         for(let c of this.cityData){
             if(c.name == cityName && c.saved == false){
               await  $.post('/city', c, function(err){
-                    console.log(c.name + ' was saved to the DB')
+                c['saved']=true
+                console.log(c.name + ' was saved to the DB')
               })
             } 
         }
-        console.log(cityName + ' is already saved')
     }
 
-    // async removeCity(cityName) {
-    //     // console.log(cityName)
-    //     await $.ajax({
-    //         url: `/city/${cityName}`,
-    //         method: "DELETE",
-    //         success: (result) => {}
-    //     })
-    //     this.renderer.renderData(this.cityData)
-    // }
-
-    removeCity(cityName){
-        for(let c in this.cityData){
-            if(this.cityData[c].name==cityName){
-            if(this.cityData[c].saved){
-                this.cityData.splice(c,1)
-            }
-            else{
-                this.cityData.splice(c,1)
-                return 1;
-            }
-        }
-    }
-        $.ajax({
+    async removeCity(cityName) {
+        const unsavedCity = await $.ajax({
             url: `/city/${cityName}`,
-            method: "DELETE",
-            success: (result) => {}
-        });
+            method: "delete",
+            success: function (res) {
+                return res
+            }
+        })
+        this.cityData.find(c => c.name == cityName)
+        this.cityData.push(unsavedCity)
     }
 }
