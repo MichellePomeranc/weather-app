@@ -28,13 +28,8 @@ $('#weatherButton').on('click', function () {
 
 $("body").on('click', '#remove', function () {
     let cityName = $(this).siblings('#city-name').text()
-    let x = tempManager.removeCity(cityName)
-    if(x==1){
-        $( this ).closest('.city').remove();
-    }
-    else{
-        loadPage()
-    }
+    tempManager.removeCity(cityName)
+    renderer.renderData(tempManager.cityData)
 })
 
 $("#cityInput").keypress(function (e) {
